@@ -1,0 +1,113 @@
+
+    /* for welcom */
+    #boad{
+        background-color: black;
+        font-family: cursive;
+        background-size: 100%;
+    }
+    .b0tn{
+        position: relative;
+        display: inline-block;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        overflow: hidden;
+        transition: 0.2s;
+        margin-top: 30px;
+        margin-left: 40%;
+        color: #2196f3;
+    }
+    .b0tn:hover{
+        color: #255784;
+        background: #2196f3;
+        text-decoration: none;
+        box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+    }
+    .glo a:hover{
+        box-shadow: 0 0 10px #f1f1ec,0 0 40px #f1f1ec,0 0 80px #f1eeec;
+    } 
+    .text-light {
+      text-shadow: 0 0 10px #f1f1ec,0 0 40px #f1f1ec,0 0 80px #f1eeec;
+    }
+    .display-1 {
+        /* font-size: 6rem; */
+        font-weight: 300;
+        line-height: 1.2;
+    }
+    .glow {
+        text-shadow: 0 0 10px #f1f1ec,0 0 40px #f1f1ec,0 0 80px #f1eeec;
+        padding-top: 200px;
+        margin-bottom: 50px;
+        font-size: 450%;
+        color: #fff;
+        text-align: center;
+        animation: glow 0.3s ease-in-out infinite alternate;
+      }
+      /* div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: mymove 5s infinite;
+      }
+      
+      @keyframes mymove {
+        from {top: 0px;}
+        to {top: 200px;}
+      } */
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #16e60f, 0 0 40px #16e60f, 0 0 50px #16e60f, 0 0 60px #16e60f, 0 0 70px #16e60f, 0 0 80px #16e60f;
+        }
+      }
+      /* CSS Media Queries for mobile*/
+      @media screen and (max-width: 600px) {
+        .b0tn{
+         
+          letter-spacing: 1px !important;
+          font-size: 10px !important;
+          margin-top: 20px !important;
+          margin-left: 10% !important;
+      }
+ 
+      .display-1 {
+          font-size: 3rem !important;
+          font-weight: 100 !important;
+          line-height: 0.5 !important;
+      }
+      .glow {
+          padding-top: 100px !important;
+          margin-bottom: 20px !important;
+          font-size: 110% !important;
+     
+        }
+      }
+      /* CSS Media Queries for Tab*/
+
+
+      @media screen and (max-width: 900px) {
+        .b0tn{
+         
+          letter-spacing: 1px !important;
+          font-size: 12px !important;
+          margin-top: 20px !important;
+          margin-left: 32% !important;
+      }
+ 
+      .display-1 {
+          font-size: 3rem !important;
+          font-weight: 100 !important;
+          line-height: 0.5 !important;
+      }
+      .glow {
+          padding-top: 100px !important;
+          margin-bottom: 20px !important;
+          font-size: 110% !important;
+     
+        }
+      }
