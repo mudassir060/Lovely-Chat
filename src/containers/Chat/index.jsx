@@ -5,14 +5,16 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from '../../config/firebase';
 import img from '../images/search.png';
-
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 class Chat extends React.Component {
     constructor() {
         super()
         this.state = {
             chat_user: {},
             chats: [],
-            message: "",
+            message: null,
             file: null
         }
 
@@ -23,13 +25,7 @@ class Chat extends React.Component {
         })
         let current_user = this.props.create_user;
         let merge_uid = this.uid_merge(current_user.uid, user.uid);
-        // let muds='Elegant Mano';
-        // if (current_user.name==muds) {
-        //     alert('My Dear fatima welcome on my chat app & i love u mari jan')
-        // }
-        //  console.log(current_user.name)
-        // console.log(merge_uid)
-
+        
         this.get_messages(merge_uid)
     }
     componentDidMount() {
@@ -42,7 +38,7 @@ class Chat extends React.Component {
             return uid2 + uid1
         }
     }
-    
+
     sent_message = () => {
         let user = this.props.create_user;
         let chat_user = this.state.chat_user;
@@ -76,7 +72,7 @@ class Chat extends React.Component {
             message: this.state.message,
             name: user.name,
             uid: user.uid,
-            
+
         })
 
         // console.log(this.uid_merge(user.uid,chat_user.uid))
@@ -86,7 +82,7 @@ class Chat extends React.Component {
         // })
         this.setState({
             // chats:this.state.chats,
-            message: "  "
+            message: ""
         })
         console.log(this.state.message)
     }
@@ -116,12 +112,12 @@ class Chat extends React.Component {
 
                 <div style={{ display: "flex" }} >
                     {/* <div style={{ display: "flex" }}  className="chat-container"> */}
-                    <div className={"conversation-list"}>
+                    <div className={"conversation-arya"}>
                         <div>
                             <div className="input-group" style={{ width: '300px', margin: "6px" }}>
                                 <input type="text" className="form-control" placeholder="Search or start new chat" />
                                 <div className="input-group-append">
-                                    <button className="btn btn-secondary" onClick={() => this.chat(0)} type="button">
+                                    <button className="btn  btn-secondary" onClick={() => this.chat(0)} type="button">
                                         <img style={{ width: '20px' }} src={img} alt="" />                                    </button>
                                 </div>
                             </div>
@@ -136,16 +132,22 @@ class Chat extends React.Component {
                             {/* <h4 >Chat User</h4> */}
                         </div>
 
-                        <div>
+                        <div  className={"conversation-list"}>
                             {this.props.users.map((v, i) => {
                                 return v.uid !== user.uid && <li key={i} className="user">
-                                    <img className="imgprofile" src={v.profile} alt="" width="24" />
-                                    <b style={{ maxWidth: "10px" }}>{v.name}</b>
-                                    <span className="text-right">
-                                        <button onClick={() => this.chat(v)} className="btn btn-success">
-                                            Chat
+                                    <div class="row">
+                                        <div>
+                                            <img className="imgprofile"style={{marginLeft:"17px"}} src={v.profile} alt="" width="24" />
+                                        </div>
+                                        <div className="contant-p"> <b>{v.name}</b> </div>
+                                        <span className="text-right">
+                                            <button onClick={() => this.chat(v)} className="btn btn-outline-success">
+                                                Chat
                                         </button>
-                                    </span>
+                                        </span>
+
+                                    </div>
+
                                 </li>
                             })}
                         </div>
@@ -159,15 +161,15 @@ class Chat extends React.Component {
                                     <img className="imgprofile" src={this.state.chat_user.profile} alt="" width="24" />
                                     <b style={{ maxWidth: "10px" }}>{this.state.chat_user.name}</b>
                                 </div>
-                                <ul className="sms-list">
+                                <ul className="sms-list ">
                                     {this.state.chats.map((v, i) => {
                                         // return<li style={{marginLeft:v.uid===user.uid?"20px":"-20px"}} key={i}>{v.message}</li>
                                         return <li className={v.uid === user.uid ? "UserSMS SMS" : "ChatSMS SMS"} key={i}>{v.message}</li>
-
+                                        // {let counter=counter + v}
                                     })}
                                 </ul>
                                 <div className="input-group mb-1 chat-input">
-                                    <input type="file" onChange={(e)=>this.setState({file: e.target.files[0]})} />
+                                    {/* <input type="file" onChange={(e) => this.setState({ file: e.target.files[0] })} /> */}
                                     <input type="text" className="sms-input"
                                         value={this.state.message}
                                         onChange={(e) => this.setState({ message: e.target.value })}
@@ -185,7 +187,16 @@ class Chat extends React.Component {
                             </div>
 
                             :
-                            <h4 style={{ marginTop: '42%', marginBottom: "42%" }}>No user</h4>
+                            <div>
+                                 {/* <h4 style={{ marginTop: '42%', marginBottom: "42%" }}>No user</h4> */}
+                            <button style={{ marginTop: '40%', marginBottom: "40%" }} class="btn btn-outline-success" 
+                            onClick={() => this.chat(0)}>
+                                <i class="fa fa-trash"></i>
+                                Show All User
+                                </button>
+
+                            </div>
+                           
                         }
                     </div>
                 </div>

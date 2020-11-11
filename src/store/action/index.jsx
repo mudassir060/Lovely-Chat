@@ -51,13 +51,16 @@ const facebook_login=(history)=>{
 
             }
 }
+
+
+
 const get_users=()=>{
   return (dispatch) => {
     let users=[];
     firebase.database().ref('/').child('users').on('child_added',(data)=>{
       users.push(data.val())
       // console.log("firebase.database==>",data.val())
-      // console.log("Z",users)
+     
       dispatch({type:"SETFIERBASEUASERS",payload:users })
     })
     }

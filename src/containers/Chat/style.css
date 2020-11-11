@@ -4,17 +4,24 @@
     width:800px; margin:0 auto;
 }
 .conversation-list{
-    /* grid-area: conversation-list; */
     overflow-y: scroll;
+    max-height:520px !important;
+    min-height:520px !important;
+        border-radius: 15px;
+
+
+}
+.conversation-arya{
+    /* grid-area: conversation-list; */
     width: 43%;
     /* height: 500px; */
     background-color: #8565d1 !important;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 5px;
     border-bottom-left-radius: 18px !important;
     /* border-top-right-radius: 18px !important; */
-    border-bottom-right-radius: 18px !important;
-    /* border-top-left-radius: 18px !important; */
+    /* border-bottom-right-radius: 18px !important; */
+    border-top-left-radius: 18px !important;
 }
 .chat-container{
     margin-top: 45px;
@@ -61,7 +68,7 @@ background-color: yellow;
         font-size: 15px!important;
         list-style-type: none;
         background-color: rgb(207, 201, 154);
-        width: 98%;
+        width: 96%;
         left: 4px;
         border-bottom-left-radius: 18px;
         border-top-right-radius: 18px;
@@ -70,7 +77,7 @@ background-color: yellow;
 
     }
     .convesation{
-        width: 100%;
+        width: 94%;
         background-color: rgb(224, 224, 109);
         text-align: center;
         /* border-bottom-left-radius: 18px !important; */
@@ -83,13 +90,30 @@ background-color: yellow;
         height: 60px;
         text-align: left !important;
         padding: 10px;
+        border-top-right-radius: 18px !important;
+
     }
-    /* .wrapper {
-        /* display: flex;
+    .contant-p{
+        width: 185px !important;
+        overflow: hidden !important;
+        display:inline;
+        padding-top: 5px;
+    }
+    .btn-awesome {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    .wrapper {
+        display: flex;
         flex-direction: column-reverse;
-        max-height: 100vh;
-        overflow: auto;
-      } */
+        /* flex-direction: column; */
+        /* max-height: 100vh; */
+        overflow: hidden;
+      }
 .chat-i1nput{
       position: absolute;
       right: 110px;
@@ -156,8 +180,8 @@ background-color: yellow;
           padding-right: 30px;
           overflow-y: scroll;
           /* overflow: hidden; */
-          max-height: 72vh;
-          min-height: 72vh;
+          max-height: 68vh;
+          min-height: 68vh;
       }
 
       /* #search-container
