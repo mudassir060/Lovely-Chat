@@ -33,10 +33,6 @@ const facebook_login=(history)=>{
                       dispatch({type:"SETUSER",payload:create_user})
                       // alert("user login Succesful!");
                       history.push('/chat')
-                      let muds='Elegant Mano';
-        if (user.displayName==muds) {
-            alert('My Dear fatima welcome on my chat app & i love u mari jan ')
-        }
         
                     })
                     // ...
