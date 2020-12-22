@@ -134,16 +134,16 @@ class Chat extends React.Component {
 
                         <div  className={"conversation-list"}>
                             {this.props.users.map((v, i) => {
-                                return v.uid !== user.uid && <li key={i} className="user">
-                                    <div class="row">
+                                return v.uid !== user.uid && <li key={i} className="user ">
+                                    <div class="row pointer"  onClick={() => this.chat(v)}>
                                         <div>
                                             <img className="imgprofile"style={{marginLeft:"17px"}} src={v.profile} alt="" width="24" />
                                         </div>
                                         <div className="contant-p"> <b>{v.name}</b> </div>
                                         <span className="text-right">
-                                            <button onClick={() => this.chat(v)} className="btn btn-outline-success">
+                                            {/* <button onClick={() => this.chat(v)} className="btn btn-outline-success">
                                                 Chat
-                                        </button>
+                                        </button> */}
                                         </span>
 
                                     </div>

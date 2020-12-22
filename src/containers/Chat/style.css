@@ -55,7 +55,7 @@ background-color: yellow;
         padding: 3px;
         font-size: 15px!important;
         list-style-type: none;
-        width: 300px;
+        /* width: 100px; */
         /* max-width: 69px; */
     }
     /* ul{
@@ -123,15 +123,24 @@ background-color: yellow;
       }
       .UserSMS{
           background-color: rgb(230, 111, 111);
-          /* float: right; */
+          /* float: right !important; */
           margin-left: 58%;
-
-
+          text-align: right;
+          padding-right: 3px;
+          padding-left: 9px !important;
+          min-width: 20px !important;
+          max-width: 300px !important;
       }
       .ChatSMS{
           background-color: rgb(125, 207, 125);
-          /* float: left; */
+          /* float: left !important; */
           /* margin-right: 60%; */
+          text-align: left;
+          padding-left: 9px !important;
+          min-width: 20px !important;
+          max-width: 300px !important;
+
+
 
       }
       .main {
@@ -159,8 +168,8 @@ background-color: yellow;
       .SMS{
         color: white;
         word-break: break-word;
-        display: flex;
-        display: inline-block;
+        /* display: flex;
+        display: inline-block; */
         border-bottom-left-radius: 18px;
         border-top-right-radius: 18px;
         border-bottom-right-radius: 18px;
@@ -176,6 +185,7 @@ background-color: yellow;
 
 
       }
+      .pointer {cursor: pointer;}
       .sms-list{
           padding-right: 30px;
           overflow-y: scroll;
